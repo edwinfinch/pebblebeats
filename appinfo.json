@@ -3,12 +3,23 @@
     "companyName": "Edwin Finch",
     "uuid": "622711ca-f8d4-435f-9e39-c320e8d18ff1",
     "capabilities": [
-        ""
+        "configurable"
     ],
-    "versionLabel": "0.1",
-    "appKeys": {},
+    "versionLabel": "0.2.0",
+    "appKeys": {
+        "timeenabled": 1,
+        "dateenabled": 2,
+        "timezone": 0
+    },
     "resources": {
-        "media": []
+        "media": [
+            {
+                "characterRegex": "[0-9, :, \\-]",
+                "file": "fonts/Walkway_SemiBold.ttf",
+                "name": "FONT_WALKAWAY_35",
+                "type": "font"
+            }
+        ]
     },
     "watchapp": {
         "watchface": true
