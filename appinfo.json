@@ -1,0 +1,18 @@
+{
+    "longName": ".beats",
+    "companyName": "Edwin Finch",
+    "uuid": "622711ca-f8d4-435f-9e39-c320e8d18ff1",
+    "capabilities": [
+        ""
+    ],
+    "versionLabel": "0.1",
+    "appKeys": {},
+    "resources": {
+        "media": []
+    },
+    "watchapp": {
+        "watchface": true
+    },
+    "shortName": ".beats",
+    "versionCode": 1
+}
