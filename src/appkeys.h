@@ -1,3 +1,5 @@
 #define TIMEZONE_KEY 0
 #define TIMEENABLED_KEY 1
 #define DATEENABLED_KEY 2
+#define DEBUG_KEY 3
+#define VERSION_KEY 4
