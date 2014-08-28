@@ -1,31 +1,32 @@
 {
-    "longName": ".beats",
+    "appKeys": {
+        "dateenabled": 2,
+        "debug": 3,
+        "timeenabled": 1,
+        "timezone": 0,
+        "version": 4
+    },
     "capabilities": [
         "configurable"
     ],
-    "uuid": "622711ca-f8d4-435f-9e39-c320e8d18ff1",
-    "versionLabel": "0.3.0",
+    "companyName": "Edwin Finch",
+    "longName": ".beats",
+    "projectType": "native",
     "resources": {
         "media": [
             {
-                "type": "font",
-                "file": "fonts/Walkway_SemiBold.ttf",
                 "characterRegex": "[0-9, :, \\-]",
-                "name": "FONT_WALKAWAY_35"
+                "file": "fonts/Walkway_SemiBold.ttf",
+                "name": "FONT_WALKAWAY_35",
+                "type": "font"
             }
         ]
     },
-    "companyName": "Edwin Finch",
-    "versionCode": 1,
     "shortName": ".beats",
+    "uuid": "622711ca-f8d4-435f-9e39-c320e8d18ff1",
+    "versionCode": 1,
+    "versionLabel": "0.3",
     "watchapp": {
         "watchface": true
-    },
-    "appKeys": {
-        "debug": 3,
-        "version": 4,
-        "dateenabled": 2,
-        "timeenabled": 1,
-        "timezone": 0
     }
 }

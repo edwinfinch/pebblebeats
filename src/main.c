@@ -1,8 +1,5 @@
 #include <pebble.h>
-#include "elements.h"
-#include "appkeys.h"	
-void glance_this(int sentence, bool vibrate, int vibrateNum, int animationLength, int fullNotify);
-	
+#include "elements.h""
 	
 void refresh_settings(){
 	if(settings.time == 0){
@@ -61,17 +58,6 @@ void process_tuple(Tuple *t)
 	  	break;
 	  case DEBUG_KEY:
 	  	settings.debug = value;
-	  	break;
-	  case VERSION_KEY:
-		  if(value > currentAppVer){
-			  glance_this(3, 1, 1, 15000, 1);
-		  }
-		  else if(value == currentAppVer){
-			  glance_this(2, 0, 0, 4000, 0);
-		  }
-		  else if(value < currentAppVer){
-			  glance_this(4, 0, 0, 4000, 0);
-		  }
 	  	break;
   }
 }

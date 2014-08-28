@@ -1,41 +1,7 @@
-var fetchedVersion = 0;
-
-function fetchVersion() {
-	if(fetchedVersion === 0){
-		var response;
-  var req = new XMLHttpRequest();
-  req.open('GET', "http://edwinfinch.github.io/pebblebeats", false);
-	console.log("Getting latest watchapp and javascript version from: http://edwinfinch.github.io/pebblebeats");
-  req.onload = function(e) {
-    if (req.readyState == 4) {
-      if(req.status == 200) {
-        response = JSON.parse(req.responseText);
-        var watchAppVersion;
-        if (response > 0) {
-			watchAppVersion = response;
-			console.log("Latest watchapp version: " + watchAppVersion + ". Sending to pebble...");
-          Pebble.sendAppMessage({
-            "version":parseInt(watchAppVersion),
-			});
-			fetchedVersion = 1;
-        }
-		else{
-			console.log("Version API error: No existing value in response");
-		}
-      } else {
-			console.log("Error: could not connect");
-      }
-    }
-  };
-  req.send(null);
-	}
-}
-
 Pebble.addEventListener("ready",
                         function(e) {
                           console.log("connect!" + e.ready);
                           console.log(e.type);
-						fetchVersion();
                         });
 
 Pebble.addEventListener("appmessage",

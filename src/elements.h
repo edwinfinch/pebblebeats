@@ -1,5 +1,10 @@
 #define SETTINGS_KEY 0
-
+	
+#define TIMEZONE_KEY 0
+#define TIMEENABLED_KEY 1
+#define DATEENABLED_KEY 2
+#define DEBUG_KEY 3
+	
 Window *window;
 TextLayer *info_layer, *time_layer, *date_layer, *beat_layer;
 
@@ -47,9 +52,6 @@ persist settings = {
 char *glanceChar[1][11] = {
 	{
 		"Settings updated.",
-		"Watchface up to date :)",
-		"New update! Unload and load the watchface from the appstore/beta community to install. See changelog at: bit.ly/drunkupdate. (This message will auto dismiss)",
-		"Hello beta tester :)",
 	}
 };
 
@@ -63,3 +65,5 @@ int holdUpAnimationLength, intro, glanceTimerCalled, value;
 int holdUpFullNotify;
 bool currentlyGlancing = 0;
 TextLayer *update_at_a_glance;
+
+void glance_this(int sentence, bool vibrate, int vibrateNum, int animationLength, int fullNotify);
