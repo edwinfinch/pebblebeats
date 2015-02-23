@@ -16,6 +16,7 @@
         "media": [
             {
                 "characterRegex": "[0-9, :, \\-]",
+                "compatibility": "2.7",
                 "file": "fonts/Walkway_SemiBold.ttf",
                 "name": "FONT_WALKAWAY_35",
                 "type": "font"

@@ -1,5 +1,5 @@
 #include <pebble.h>
-#include "elements.h""
+#include "elements.h"
 	
 void refresh_settings(){
 	if(settings.time == 0){
@@ -91,17 +91,19 @@ static TextLayer* textLayerInit(GRect location, int font)
 	text_layer_set_text_color(layer, GColorWhite);
 	text_layer_set_background_color(layer, GColorClear);
 	text_layer_set_text_alignment(layer, GTextAlignmentCenter);
-	if(font == 1){
-		text_layer_set_font(layer, fonts_get_system_font(FONT_KEY_BITHAM_42_LIGHT));
-	}
-	else if(font == 2){
-		text_layer_set_font(layer, fonts_get_system_font(FONT_KEY_GOTHIC_28));
-	}
-	else if(font == 3){
-		text_layer_set_font(layer, fonts_get_system_font(FONT_KEY_GOTHIC_18));
-	}
-	else if(font == 4){
-		text_layer_set_font(layer, walkaway_reg);		
+	switch(font){
+		case 1:
+			text_layer_set_font(layer, fonts_get_system_font(FONT_KEY_BITHAM_42_LIGHT));
+			break;
+		case 2:
+			text_layer_set_font(layer, fonts_get_system_font(FONT_KEY_GOTHIC_28));
+			break;
+		case 3:
+			text_layer_set_font(layer, fonts_get_system_font(FONT_KEY_GOTHIC_18));
+			break;
+		case 4:
+			text_layer_set_font(layer, walkaway_reg);
+			break;
 	}
 	return layer;
 }
@@ -136,7 +138,12 @@ void tick_handler(struct tm *tick_time, TimeUnits units_changed){
 		strftime(timeBuffer, sizeof(timeBuffer), "%I:%M", tick_time);
 	}
 	
-	strftime(dateBuffer, sizeof(dateBuffer), "%d-%m", tick_time);
+	if(settings.date == 2){
+		strftime(dateBuffer, sizeof(dateBuffer), "%d-%m", tick_time);
+	}
+	else{
+		strftime(dateBuffer, sizeof(dateBuffer), "%m-%d", tick_time);
+	}
 	
 	text_layer_set_text(time_layer, timeBuffer);
 	text_layer_set_text(date_layer, dateBuffer);
